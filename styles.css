@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#portada{
+    height: 100dvh;
+}
+
+/* main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+} */
+
+/*reproductor*/
+/* REPRODUCTOR DE AUDIO */
+  .player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    max-width: 520px;
+    margin: 3rem auto 1.5rem;
+  }
+
+  .progress-wrap {
+    width: 100%;
+    height: 5px;
+    background: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #70d5ee;
+    border-radius: 4px;
+    transition: width 0.2s linear;
+    position: relative;
+  }
+
+  .progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #5ab2c9;
+    border: 2px solid #56d9fa;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(108, 187, 109, 0.25);
+  }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .play-btn {
+    background: #5ab2c9;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .play-btn:hover,
+  .nav-btn:hover {
+    background: #ddd;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .time {
+    font-size: 11px;
+    color: #aaa;
+    white-space: nowrap;
+    font-family: sans-serif;
+  }
+
+  .volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .vol-icon { font-size: 14px; }
+
+  .volume {
+    width: 60px;
+    accent-color: #fff;
+    cursor: pointer;
+  }
+/*fin reproductor*/
+
+.seccion-blanca {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@font-face {
+            font-family: 'WorldDiscoveryThree_PERSONAL_USE_ONLY';
+            src: url('fuentes/WorldDiscoveryThree_PERSONAL_USE_ONLY.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+h5 {
+  font-family: 'WorldDiscoveryThree_PERSONAL_USE_ONLY';
+  font-size: 2.5em;
+  margin: 2px;
+  padding: 70px;
+  color: #4bb9d4;
+  text-align: center;
+}
+
+#El-diseño {
+  text-align: justify;
+  margin: 0 auto;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#sello{
+  display: block;        /* clave para centrar con margin */
+  margin: 0 auto;        /* centra horizontalmente */
+  max-width: 100%;       /* evita que se salga en móviles */
+  width: 700px;          /* tamaño máximo en PC */
+  height: auto;          /* mantiene proporción */
+  border-bottom: 4px black solid;
+}
+
+/*Carrusel*/
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Puedes ajustar este ancho */
+    margin: 50px auto;
+}
+
+.carrusel-track-container {
+    overflow: hidden;
+    width: 500px; /* Ajusta este valor al tamaño que desees */
+    margin: 0 auto;
+}
+
+.carrusel-track {
+    display: flex;
+    width: 1000px; /* Siempre debe ser: ancho del contenedor * número de fotos */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease;
+}
+
+.carrusel-slide {
+    flex: 0 0 500px; /* Debe ser igual al ancho del contenedor */
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.fotos {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Botones de navegación */
+.carrusel-nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.carrusel-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: #4bb9d4;
+    font-size: 24px;
+    padding: 15px 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: 0.3s;
+}
+
+.carrusel-button:hover {
+    background: white;
+}
+/*Fin del carrusel*/

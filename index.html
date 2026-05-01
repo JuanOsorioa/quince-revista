@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imagenes/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>¡Mis Quince! - Maria Jose</title>
+  </head>
+  <body>
+    <header>
+      <img src="imagenes/portada.jpeg" alt="Portada de revista" id="portada">
+    </header>
+    <main>
+      <div class="player">
+        <audio id="audio" src="audio.mp3"></audio>
+        <div class="progress-wrap" id="progressWrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="player-controls">
+          <button class="nav-btn like-btn" id="likeBtn" aria-label="Like">♡</button>
+          <button class="nav-btn" id="prevBtn" aria-label="Canción previa">&#9664;&#9664;</button>
+          <button class="play-btn" id="playBtn" aria-label="Reproducir / Pausar">&#9654;</button>
+          <button class="nav-btn" id="nextBtn" aria-label="Canción siguiente">&#9654;&#9654;</button>
+          <button class="nav-btn shuffle-btn" id="shuffleBtn" aria-label="Shuffle">⤯</button>
+        </div>
+      </div>
+      <script>
+        const likeBtn = document.getElementById('likeBtn');
+        const shuffleBtn = document.getElementById('shuffleBtn');
+        likeBtn?.addEventListener('click', () => {
+          likeBtn.classList.toggle('liked');
+        });
+        shuffleBtn?.addEventListener('click', () => {
+          shuffleBtn.classList.toggle('active');
+        });
+      </script>
+      
+      <div class="seccion-blanca">
+        <h5>XV by MJ</h5>
+        <p id="El-diseño">El diseño de una vida comienza con un<br> 
+          sueño. Te invitamos a celebrar el<br>
+          decimoquinto aniversario de Mariajose en<br>
+          una noche inspirada en la magia de la<br>
+          moda. 
+        </p>
+      </div>
+      <img src="imagenes/sello MJ.png" alt="Maria Jose vibes" id="sello">
+      <!--Carrusel-->
+      <div class="carrusel-container">
+  <div class="carrusel-track-container">
+    <ul class="carrusel-track">
+      <li class="carrusel-slide current-slide">
+        <img class="carrusel-image fotos" src="imagenes/imagen1a.jpeg" alt="Maria Jose Foto 1">
+      </li>
+      <li class="carrusel-slide">
+        <img class="carrusel-image fotos" src="imagenes/imagen2a.jpeg" alt="Maria Jose Foto 2">
+      </li>
+    </ul>
+  </div>
+  <div class="carrusel-nav-buttons">
+    <button class="carrusel-button btn-prev" aria-label="Anterior">&#10094;</button>
+    <button class="carrusel-button btn-next" aria-label="Siguiente">&#10095;</button>
+  </div>
+</div>
+      <!--Fin Carrusel-->
+      <div class="seccion-azul">
+        <p>De tus primeros pasos...<br>a esta gran pasarela<br>llamada vida.<br></p>
+      </div>
+    </main>
+    <script src="player.js"></script>
+    <script src="carruselA.js"></script>
+  </body>
+</html>

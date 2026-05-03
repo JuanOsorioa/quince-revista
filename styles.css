@@ -16,12 +16,12 @@ header {
     height: 100dvh;
 }
 
-/* main {
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
-} */
+}
 
 /*reproductor*/
 /* REPRODUCTOR DE AUDIO */
@@ -158,8 +158,10 @@ h5 {
 #El-diseño {
   text-align: justify;
   margin: 0 auto;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #sello{
@@ -203,7 +205,7 @@ h5 {
 
 .fotos {
     display: block;
-    max-width: 90%;
+    max-width: 100dvh;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -235,3 +237,174 @@ h5 {
     background: white;
 }
 /*Fin del carrusel*/
+
+.seccion-azul {
+  background-color: rgb(31, 74, 122);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  width: 430px;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-bottom: 2px;
+}
+
+@font-face {
+            font-family: 'Abhaya';
+            src: url('fuentes/abhaya-libre-semi-bold.ttf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+@font-face {
+            font-family: 'GBD';
+            src: url('fuentes/GFSDidot-Regular.ttf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+#De-tus {
+  text-align: center;
+  margin: 0  auto;
+  font-size: 2em;
+  color: white;
+  font-family: Abhaya;
+  font-style: italic;
+}
+
+/* carrusel 2 */
+/* Contenedor principal del carrusel */
+.c2-track-container {
+  width: 100% !important;
+  max-width: 450px !important; /* Ideal para fotos verticales */
+  margin: 0 auto !important;
+  aspect-ratio: 2 / 3 !important; /* Proporción vertical */
+  position: relative !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+/* Lista que contiene los slides */
+.c2-track {
+  width: 100% !important;
+  height: 100% !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Cada slide individual */
+.c2-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  display: list-item;
+  overflow-y: hidden;
+}
+
+/* Las imágenes */
+.c2-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 0 !important; /* Esquinas rectas */
+}
+
+/* Contenedor de botones: Centrado y con aire editorial */
+.c2-nav-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important; /* Espacio amplio para elegancia */
+    padding: 30px 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+}
+
+/* Estilo de los botones: Minimalistas y delicados */
+.c2-button {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #4A4A4A !important; /* Gris suave, más elegante que el negro puro */
+    font-size: 35px !important;
+    font-weight: 100 !important;
+    line-height: 1 !important;
+    padding: 10px 20px !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Efecto sutil al pasar el mouse */
+.c2-button:hover {
+    color: #37d4d4 !important; /* Un tono dorado suave */
+    opacity: 0.7 !important;
+    transform: translateY(-2px) !important; /* Pequeña elevación */
+}
+
+/* Opcional: Una pequeña línea divisoria visual entre botones */
+.c2-nav-buttons::after {
+    content: "" !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 20px !important;
+    background-color: #E0E0E0 !important;
+    pointer-events: none !important;
+}
+
+/* Ajuste para que las flechas se vean más estilizadas */
+.btn-prev, .btn-next {
+    font-family: serif !important; /* Fuente con serifa para look clásico */
+}
+
+/* fin del carrusel 2 */
+
+/*Contador*/
+#countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px; /* Espacio entre los bloques de números */
+  padding: 40px 0;
+  width: 100%;
+  font-family: 'serif'; /* Cambia a tu fuente preferida */
+  border-top: 2px solid black;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
+
+/* --- ESTILO DE LOS NÚMEROS --- */
+.number {
+  font-size: 3rem; /* Tamaño de los números */
+  font-weight: 200; /* Grosor fino para elegancia */
+  color: #4A4A4A;   /* Color del número (Gris oscuro) */
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+/* --- ESTILO DE LAS ETIQUETAS (Días, Horas, etc) --- */
+.label {
+  font-size: 1rem; /* Tamaño de la letra */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  color: #3090b6; /* Color dorado (puedes cambiarlo a rosado o negro) */
+}
+
+/* Responsivo: Ajuste para celulares */
+@media (max-width: 480px) {
+  #countdown-container { gap: 10px; }
+  .number { font-size: 2rem; }
+  .label { font-size: 0.6rem; }
+}
+/*Fin del contador*/

@@ -4,6 +4,13 @@
     overflow-x: hidden;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+}
+
 header {
     min-height: 100vh;
     display: flex;
@@ -269,7 +276,7 @@ h5 {
   margin: 0  auto;
   font-size: 2em;
   color: white;
-  font-family: Abhaya;
+  font-family: pacifi;
   font-style: italic;
 }
 
@@ -408,3 +415,92 @@ h5 {
   .label { font-size: 0.6rem; }
 }
 /*Fin del contador*/
+
+
+
+
+
+@media (max-width: 480px) {
+  footer {
+    background-color: rgb(31, 74, 122);
+    width: 100%; /* Ajustado para evitar desbordamiento horizontal */
+    height: 300px; /* Altura ajustada para que no sobre tanto espacio */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;    /* Centra el contenido verticalmente */
+    margin: 0 auto;
+    position: relative;     /* Necesario para que las flores se posicionen respecto al azul */
+    overflow: visible;      /* Permite que las flores sobresalgan sin desaparecer */
+  }
+
+  #te-esperamos {
+    width: 320px;           /* Tamaño similar al del diseño PDF */
+    height: auto;
+    z-index: 10;
+  }
+
+  .flor {
+    position: absolute;
+    width: 250px;           /* Tamaño ajustado para las flores */
+    height: auto;
+    z-index: 20;            /* Siempre por encima del fondo y texto */
+  }
+
+  .flor-arriba {
+    top: -70px;             /* Sobresale un poco hacia arriba de la sección azul */
+    right: -60px;           /* Se posiciona a la derecha como en el PDF */
+  }
+
+  .flor-abajo {
+    bottom: -40px;          /* Sobresale un poco hacia abajo */
+    left: -70px;            /* Se posiciona a la izquierda como en el PDF */
+  }
+}
+
+/* --- VERSIÓN DESKTOP (PANTALLAS GRANDES) --- */
+@media (min-width: 481px) {
+  footer {
+    background-color: rgb(31, 74, 122);
+    width: 80%;            /* No ocupa todo el ancho para verse más premium */
+    max-width: 1000px;     /* Límite de expansión */
+    height: 500px;         /* Más bajo y ancho que en móvil */
+    margin: 100px auto;    /* Espaciado exterior para que respire el diseño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;    /* Base para el movimiento libre */
+    overflow: visible;     /* Permite que las flores "se salgan" del cuadro */
+    border-radius: 10px;   /* Un toque sutil de redondeo */
+  }
+
+  #te-esperamos {
+    width: 450px;          /* Más grande en desktop */
+    height: auto;
+    z-index: 10;
+    transition: transform 0.3s ease;
+  }
+
+  /* Efecto opcional: al pasar el mouse el logo crece un poco */
+  #te-esperamos:hover {
+    transform: scale(1.05);
+  }
+
+  .flor {
+    position: absolute;
+    width: 350px;          /* Flores más protagónicas */
+    height: auto;
+    z-index: 20;
+  }
+
+  .flor-arriba {
+    top: -100px;           /* Se sale más hacia arriba */
+    right: -120px;         /* Se sale más hacia la derecha */
+    transform: rotate(15deg); /* Ligera rotación para mayor naturalidad */
+  }
+
+  .flor-abajo {
+    bottom: -100px;        /* Se sale más hacia abajo */
+    left: -120px;          /* Se sale más hacia la izquierda */
+    transform: rotate(-15deg);
+  }
+}

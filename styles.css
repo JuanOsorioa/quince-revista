@@ -372,6 +372,12 @@ h5 {
 
 /* fin del carrusel 2 */
 
+.detalles {
+  border-top: 2px solid black;
+  margin: 0 auto;
+
+}
+
 /*Contador*/
 #countdown-container {
   display: flex;
@@ -381,7 +387,6 @@ h5 {
   padding: 40px 0;
   width: 100%;
   font-family: 'serif'; /* Cambia a tu fuente preferida */
-  border-top: 2px solid black;
 }
 
 .countdown-item {
@@ -416,13 +421,182 @@ h5 {
 }
 /*Fin del contador*/
 
+/* =============================================
+   SECCIÓN AGENDA - Diseño elegante de quince
+   ============================================= */
+
+/* Contenedor externo: posición relativa para flores absolutas */
+.agenda-container {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 60px 0 40px; /* espacio para flores que sobresalen */
+  background-image: url(imagenes/fondo-cristal.png);
+  background-size: contain;
+}
+
+/* Flores decorativas a los lados del vidrio */
+.agenda-flor {
+  position: absolute;
+  width: 260px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.agenda-flor-izq {
+  left: -70px;
+  top: 30px;
+  transform: scaleX(-1); /* espejo para que apunte hacia dentro */
+}
+
+.agenda-flor-der {
+  right: -70px;
+  bottom: 20px;
+}
+
+/* Contenedor interno con imagen vidrio como fondo */
+.agenda-inner {
+  position: relative;
+  z-index: 5;
+  background-image: url(imagenes/vidrio.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 50px 35px 45px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* --- SÁBADO encima de la fecha --- */
+.agenda-sabado {
+  font-family: 'GBD';
+  font-size: 2rem;
+  letter-spacing: 4px;
+  color: #081727;
+  margin-bottom: 1px;
+  margin-top: -20px;
+}
+
+/* --- FECHA: 27 arriba, JUNIO abajo --- */
+.fecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0 auto -40px;
+}
+
+.fecha img:first-child {
+  width: 100px;
+  height: auto;
+  margin-top: -70px;
+}
+
+.fecha img:last-child {
+  width: 150px;
+  height: auto;
+  margin-top: -88px;
+}
+
+/* Línea separadora */
+.agenda-linea {
+  width: 80%;
+  height: 3px;
+  background: rgba(11, 39, 71, 0.35);
+  margin: 16px auto 20px;
+}
+
+/* --- UBICACIÓN --- */
+.ubicacion-header {
+  margin-bottom: 28px;
+}
+
+.villa-titulo {
+  font-family: 'GBD';
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  color: #081727;
+  margin-bottom: 4px;
+  font-weight: lighter;
+}
+
+.villa-subtitulo {
+  font-family: 'serif';
+  font-size: 1rem;
+  color: #081727;
+  margin-bottom: -1px;
+  letter-spacing: 2px;
+}
+
+/* --- EVENTOS EN COLUMNA (como el PDF) --- */
+.evento-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  margin-bottom: -20px;
+}
+
+.ceremonia {
+  width: 250px;
+  margin-bottom: -30px;
+}
+
+.evento-item p {
+  font-family: 'BGD';
+  font-size: 20pt;
+  color: #081727;
+  letter-spacing: 1px;
+  margin-top: -30px;
+}
+
+.icon-detalle {
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0px 2px 4px rgba(31, 74, 122, 0.15));
+  margin-bottom: -95px;
+}
+
+
+/* --- BOTÓN CÓMO LLEGAR --- */
+.como-llegar-seccion {
+  margin-top: 100px;
+}
+
+.btn-como-llegar img {
+  width: 220px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.btn-como-llegar:hover img {
+  transform: scale(1.05);
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .agenda-container {
+    max-width: 90%;
+    padding: 50px 0 30px;
+  }
+  .agenda-flor { width: 220px; }
+  .agenda-flor-izq { left: -82px; top: 20px; }
+  .agenda-flor-der { right: -75px; bottom: 1px; }
+  .agenda-inner { padding: 40px 25px 35px; }
+  .villa-titulo { font-size: 1.4rem; }
+  .fecha img:first-child { width: 250px; }
+  .fecha img:last-child { width: 150px; }
+}
+
+/* Fin de Agenda*/
+
 
 
 
 
 @media (max-width: 480px) {
   footer {
-    background-color: rgb(31, 74, 122);
+    background-color: rgb(22, 54, 92);
     width: 100%; /* Ajustado para evitar desbordamiento horizontal */
     height: 300px; /* Altura ajustada para que no sobre tanto espacio */
     display: flex;
@@ -460,7 +634,7 @@ h5 {
 /* --- VERSIÓN DESKTOP (PANTALLAS GRANDES) --- */
 @media (min-width: 481px) {
   footer {
-    background-color: rgb(31, 74, 122);
+    background-color: rgb(22, 54, 92);
     width: 80%;            /* No ocupa todo el ancho para verse más premium */
     max-width: 1000px;     /* Límite de expansión */
     height: 500px;         /* Más bajo y ancho que en móvil */
@@ -504,3 +678,83 @@ h5 {
     transform: rotate(-15deg);
   }
 }
+
+.dress-code {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#gancho {
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#user {
+  width: 100px;
+  margin: 0  auto;
+  margin-top: 40px;
+}
+
+.texto {
+  font-family: GBD;
+  margin-top: 40px;
+  font-size: 2em;
+}
+
+#confirmar {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+
+/* --- SECCIÓN DE CORRECCIONES GENERALES Y SCROLLS --- */
+
+/* 1. Corrección de visibilidad para la corona y elementos de la agenda */
+.evento-item {
+    height: auto !important;
+    min-height: 100px;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajuste específico para el icono de la corona */
+img[src*="corona.png"], 
+.icon-detalle {
+    margin-bottom: 0 !important;
+    display: block;
+    max-width: 100%;
+}
+
+/* 2. Eliminación de scrolls internos en contenedores principales */
+main, 
+.carrusel-container, 
+.agenda-container, 
+.agenda-inner {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* 3. Corrección del contador (Countdown) */
+#countdown-container .countdown-item,
+#countdown-container .number,
+#countdown-container .label {
+    overflow: visible !important;
+    height: auto !important;
+    display: block !important; /* Evita que el scroll se active por line-height o height fijo */
+}
+
+/* 4. Corrección de la sección Villa Guadalupe (Ubicación) */
+.ubicacion-header {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: min-content;
+}
+
+/* --- FIN DE LAS CORRECCIONES --- */

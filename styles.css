@@ -246,7 +246,7 @@ h5 {
 /*Fin del carrusel*/
 
 .seccion-azul {
-  background-color: rgb(31, 74, 122);
+  background-color: rgb(14, 48, 87);
   display: flex;
   justify-content: center;
   text-align: center;
@@ -524,7 +524,7 @@ h5 {
   font-family: 'serif';
   font-size: 1rem;
   color: #081727;
-  margin-bottom: -1px;
+  margin-bottom: -25px;
   letter-spacing: 2px;
 }
 
@@ -534,11 +534,12 @@ h5 {
   flex-direction: column;
   align-items: center;
   gap: 1px;
-  margin-bottom: -20px;
+  margin-bottom: 10px;
 }
 
 .ceremonia {
   width: 250px;
+  margin-top: -95px !important;
   margin-bottom: -30px;
 }
 
@@ -551,10 +552,30 @@ h5 {
 }
 
 .icon-detalle {
-  height: 100px;
+  height: 120px;
   width: auto;
   filter: drop-shadow(0px 2px 4px rgba(31, 74, 122, 0.15));
   margin-bottom: -95px;
+}
+
+.corona {
+  margin-top: -100px !important;
+  width: 200px;
+  height: auto;
+}
+
+
+.recepcion {
+  width: 270px;
+  margin-top: -300px !important;
+}
+
+.siete {
+  font-family: 'BGD';
+  font-size: 20pt;
+  color: #081727;
+  letter-spacing: 1px;
+  margin-top: -70px;
 }
 
 
@@ -679,6 +700,156 @@ h5 {
   }
 }
 
+@media (max-width:480px) {
+  #flor-int1 {
+  /* 1. POSICIÓN ABSOLUTA: La saca del flujo normal del diseño */
+  position: absolute; 
+  
+  /* 2. CAPA SUPERIOR: Asegura que esté por encima de TODO (menús, fotos, etc.) */
+  z-index: 9999; 
+
+  /* 3. UBICACIÓN: Modifica estos valores para moverla */
+  /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
+  top: 4260px;        /* Distancia desde el borde superior */
+  right: -140px;      /* Valor negativo para que sobresalga por la derecha */
+
+  /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
+  transform: rotate(-300deg); 
+
+  /* 5. VISIBILIDAD: Evita que se corte si el padre tiene overflow oculto */
+  overflow: visible !important;
+  
+  /* 6. INTERACCIÓN: Para que no bloquee botones que queden debajo de ella */
+  pointer-events: none; 
+
+  /* Tamaño de la imagen */
+  width: 380px;
+  height: auto;
+}
+
+#flor-int2 {
+  /* 1. POSICIÓN ABSOLUTA: La saca del flujo normal del diseño */
+  position: absolute; 
+  
+  /* 2. CAPA SUPERIOR: Asegura que esté por encima de TODO (menús, fotos, etc.) */
+  z-index: 9999; 
+
+  /* 3. UBICACIÓN: Modifica estos valores para moverla */
+  /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
+  top: 4750px;        /* Distancia desde el borde superior */
+  right: 230px;      /* Valor negativo para que sobresalga por la derecha */
+
+  /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
+  transform: rotate(-50deg); 
+
+  /* 5. VISIBILIDAD: Evita que se corte si el padre tiene overflow oculto */
+  overflow: visible !important;
+  
+  /* 6. INTERACCIÓN: Para que no bloquee botones que queden debajo de ella */
+  pointer-events: none; 
+
+  /* Tamaño de la imagen */
+  width: 260px;
+  height: auto;
+}
+
+#flor-int3 {
+  /* 1. POSICIÓN ABSOLUTA: La saca del flujo normal del diseño */
+  position: absolute; 
+  
+  /* 2. CAPA SUPERIOR: Asegura que esté por encima de TODO (menús, fotos, etc.) */
+  z-index: 9999; 
+
+  /* 3. UBICACIÓN: Modifica estos valores para moverla */
+  /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
+  top: 4955px;        /* Distancia desde el borde superior */
+  right: -100px;      /* Valor negativo para que sobresalga por la derecha */
+
+  /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
+  transform: rotate(-20deg); 
+
+  /* 5. VISIBILIDAD: Evita que se corte si el padre tiene overflow oculto */
+  overflow: visible !important;
+  
+  /* 6. INTERACCIÓN: Para que no bloquee botones que queden debajo de ella */
+  pointer-events: none; 
+
+  /* Tamaño de la imagen */
+  width: 260px;
+  height: auto;
+}
+}
+
+/* Contenedor principal */
+.recuerdos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff; /* Fondo blanco como en la imagen */
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Título Azul */
+.recuerdos-titulo {
+    color: #006699; /* Azul similar al de la imagen */
+    font-family: 'BGD'; /* Puedes usar una fuente elegante como Playfair Display */
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+/* Icono de la cámara */
+.recuerdos-icono img {
+    width: 120px; /* Ajusta según el tamaño de tu imagen */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Texto central en negro */
+.recuerdos-texto {
+    color: #000000;
+    font-family: 'sans-serif';
+    font-size: 1.2rem;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Botón de imagen */
+.recuerdos-boton img {
+    width: 250px; /* Tamaño del botón */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.recuerdos-boton img:hover {
+    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+}
+
+/* Frase final azul cursiva */
+.recuerdos-frase {
+    color: #006699;
+    font-family: 'BGD'; 
+    font-style: italic; /* Cursiva */
+    font-size: 1.5rem;
+    margin-top: 30px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+/* Media Query para celulares */
+@media (max-width: 480px) {
+    .recuerdos-titulo { font-size: 1.5rem; }
+    .recuerdos-texto { font-size: 1rem; }
+    .recuerdos-frase { font-size: 1.2rem; }
+    .recuerdos-boton img { width: 200px; }
+}
+
 .dress-code {
   display: flex;
   justify-content: center;
@@ -690,6 +861,7 @@ h5 {
   width: 350px;
   margin: 0 auto;
   margin-bottom: 10px;
+  margin-top: 25px;
 }
 
 #user {
@@ -758,3 +930,51 @@ main,
 }
 
 /* --- FIN DE LAS CORRECCIONES --- */
+
+.mj {
+  justify-content: center;
+  justify-items: center;
+
+}
+
+/* =============================================
+   ANIMACIONES SUTILES PARA ICONOS ESPECÍFICOS
+   ============================================= */
+
+/* 1. Icono de Usuario (Asistencia): Latido suave */
+#user {
+    animation: userPulse 4s ease-in-out infinite;
+}
+
+@keyframes userPulse {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* 2. Icono de Vestimenta (Gancho): Balanceo delicado */
+#gancho {
+    transform-origin: top center;
+    animation: hookSway 5s ease-in-out infinite;
+}
+
+@keyframes hookSway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+/* 3. Iconos de la Agenda (Cruz y Corona): Brillo y elevación */
+.icon-detalle, .corona {
+    animation: iconFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+    transition: filter 0.3s ease;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Efecto extra: Brillo sutil al pasar el mouse */
+.icon-detalle:hover, .corona:hover {
+    filter: drop-shadow(0px 0px 8px rgba(75, 185, 212, 0.5));
+}

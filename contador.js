@@ -1,6 +1,6 @@
 // 1. CONFIGURA LA FECHA DEL EVENTO AQUÍ
 // Formato: "Mes Día, Año Horas:Minutos:Segundos"
-const fechaEvento = new Date("Dec 31, 2026 21:00:00").getTime();
+const fechaEvento = new Date("Jun 27, 2026 00:00:00").getTime();
 
 const contador = setInterval(function() {
 

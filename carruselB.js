@@ -33,3 +33,9 @@ if (container2 && prevBtn2 && nextBtn2 && slides2.length > 0) {
   // Inicializar mostrando la primera foto
   updateSlides(0);
 }
+
+// Para que se mueva solo 
+setInterval(() => {
+    const nextButtonC2 = document.querySelector('.c2-btn-next');
+    if (nextButtonC2) nextButtonC2.click();
+}, 4000);

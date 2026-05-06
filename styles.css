@@ -4,11 +4,16 @@
     overflow-x: hidden;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
+  overflow-x: hidden;  /* ← agrega esto */
+  max-width: 100%;     /* ← y esto */
 }
 
 header {
@@ -54,7 +59,7 @@ main {
   .progress-bar {
     height: 100%;
     width: 0%;
-    background: #70d5ee;
+    background: #336fb4;
     border-radius: 4px;
     transition: width 0.2s linear;
     position: relative;
@@ -68,7 +73,7 @@ main {
     transform: translate(50%, -50%);
     width: 10px;
     height: 10px;
-    background: #5ab2c9;
+    background: #336fb4;
     border: 2px solid #56d9fa;
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(108, 187, 109, 0.25);
@@ -158,7 +163,7 @@ h5 {
   font-size: 2.5em;
   margin: 2px;
   padding: 70px;
-  color: #4bb9d4;
+  color: #336fb4;
   text-align: center;
 }
 
@@ -247,14 +252,6 @@ h5 {
 
 .seccion-azul {
   background-color: rgb(14, 48, 87);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  justify-items: center;
-  width: 430px;
-  margin: 0 auto;
-  border-radius: 20px;
-  margin-bottom: 2px;
 }
 
 @font-face {
@@ -432,7 +429,9 @@ h5 {
   margin: 0 auto;
   padding: 60px 0 40px; /* espacio para flores que sobresalen */
   background-image: url(imagenes/fondo-cristal.png);
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Flores decorativas a los lados del vidrio */
@@ -601,7 +600,7 @@ h5 {
     padding: 50px 0 30px;
   }
   .agenda-flor { width: 220px; }
-  .agenda-flor-izq { left: -82px; top: 20px; }
+  .agenda-flor-izq { left: -97px; top: 50px; }
   .agenda-flor-der { right: -75px; bottom: 1px; }
   .agenda-inner { padding: 40px 25px 35px; }
   .villa-titulo { font-size: 1.4rem; }
@@ -710,11 +709,11 @@ h5 {
 
   /* 3. UBICACIÓN: Modifica estos valores para moverla */
   /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
-  top: 4260px;        /* Distancia desde el borde superior */
-  right: -140px;      /* Valor negativo para que sobresalga por la derecha */
+  top: 4270px;        /* Distancia desde el borde superior */
+  right: -130px;      /* Valor negativo para que sobresalga por la derecha */
 
   /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
-  transform: rotate(-300deg); 
+  transform: rotate(60deg)!important; 
 
   /* 5. VISIBILIDAD: Evita que se corte si el padre tiene overflow oculto */
   overflow: visible !important;
@@ -736,8 +735,8 @@ h5 {
 
   /* 3. UBICACIÓN: Modifica estos valores para moverla */
   /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
-  top: 4750px;        /* Distancia desde el borde superior */
-  right: 230px;      /* Valor negativo para que sobresalga por la derecha */
+  top: 4150px;        /* Distancia desde el borde superior */
+  right: -230px;      /* Valor negativo para que sobresalga por la derecha */
 
   /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
   transform: rotate(-50deg); 
@@ -797,9 +796,9 @@ h5 {
     color: #006699; /* Azul similar al de la imagen */
     font-family: 'BGD'; /* Puedes usar una fuente elegante como Playfair Display */
     font-size: 1.8rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 20px;
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 /* Icono de la cámara */
@@ -812,12 +811,12 @@ h5 {
 /* Texto central en negro */
 .recuerdos-texto {
     color: #000000;
-    font-family: 'sans-serif';
+    font-family: 'GBD';
     font-size: 1.2rem;
     line-height: 1.4;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin-bottom: 30px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* Botón de imagen */
@@ -831,15 +830,18 @@ h5 {
     transform: scale(1.05); /* Efecto sutil al pasar el mouse */
 }
 
+@font-face {
+  font-family: relationship;
+  src: url(fuentes/Relationship\ of\ mélodrame.ttf);
+}
+
 /* Frase final azul cursiva */
 .recuerdos-frase {
     color: #006699;
-    font-family: 'BGD'; 
-    font-style: italic; /* Cursiva */
-    font-size: 1.5rem;
-    margin-top: 30px;
+    font-family: 'relationship'; 
+    font-size: 2rem !important;
+    margin-top: 4px;
     line-height: 1.3;
-    font-weight: bold;
 }
 
 /* Media Query para celulares */
@@ -865,7 +867,7 @@ h5 {
 }
 
 #user {
-  width: 100px;
+  width: 70px;
   margin: 0  auto;
   margin-top: 40px;
 }
@@ -977,4 +979,116 @@ main,
 /* Efecto extra: Brillo sutil al pasar el mouse */
 .icon-detalle:hover, .corona:hover {
     filter: drop-shadow(0px 0px 8px rgba(75, 185, 212, 0.5));
+}
+
+
+/* --- ANIMACIONES DE VISIBILIDAD Y MOVIMIENTO --- */
+
+/* 1. Estado inicial: Oculto y un poco desplazado */
+.agenda-flor, .flor, #flor-int1, #flor-int2, #flor-int3 {
+    opacity: 0;
+    filter: blur(5px); /* Efecto de desenfoque inicial */
+    transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
+    pointer-events: none;
+}
+
+/* 2. Clase que activa la aparición (se añade vía JS) */
+.flor-visible {
+    opacity: 1 !important;
+    filter: blur(0) !important;
+}
+
+/* 3. Animación de balanceo constante (solo cuando es visible) */
+.flor-visible.agenda-flor, 
+.flor-visible.flor, 
+.flor-visible[id^="flor-int"] {
+    animation: floatingFlower 8s ease-in-out infinite;
+}
+
+@keyframes floatingFlower {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    33% {
+        transform: translateY(-10px) rotate(2deg) scale(1.02);
+    }
+    66% {
+        transform: translateY(5px) rotate(-2deg) scale(0.98);
+    }
+}
+
+/* 4. Animaciones sutiles para los iconos */
+#user, #gancho, .icon-detalle, .corona {
+    opacity: 0;
+    transition: opacity 1s ease 0.3s; /* Aparecen con un pequeño retraso */
+}
+
+.icon-visible {
+    opacity: 1 !important;
+}
+
+/* Animación específica para el gancho (balanceo) */
+.icon-visible#gancho {
+    transform-origin: top center;
+    animation: swayHook 4s ease-in-out infinite;
+}
+
+@keyframes swayHook {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+/* --- SOLUCIÓN FINAL SCROLL HORIZONTAL --- */
+
+/* 1. Bloqueo en la raíz */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 2. Bloqueo en el contenedor del carrusel (que mide 1000px) */
+.carrusel, 
+.carrusel-track-container {
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+/* 3. Bloqueo en las secciones con flores decorativas */
+.agenda, 
+.agenda-container,
+.dress-code, 
+.portada,
+section {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    position: relative !important;
+}
+
+/* 4. Evita que las imágenes se estiren más de lo debido */
+img {
+    max-width: 100% !important;
+    height: auto;
+}
+
+
+/* Animación de vibración sutil pero marcada */
+@keyframes vibration-calm {
+  0%, 70%, 100% { 
+    transform: translate(0, 0) rotate(0deg); 
+  }
+  72% { transform: translate(-1.5px, 1.5px) rotate(-1.5deg); }
+  78% { transform: translate(1.5px, -1.5px) rotate(1.5deg); }
+  84% { transform: translate(-1.5px, -1.5px) rotate(-1.5deg); }
+  90% { transform: translate(1.5px, 1.5px) rotate(1.5deg); }
+  95% { transform: translate(-1px, 1px) rotate(-1deg); }
+}
+
+/* Clase que aplicaremos a la cámara */
+.camara-animada {
+  display: inline-block;
+  animation: vibration-calm 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
 }

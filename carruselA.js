@@ -40,3 +40,9 @@ prevButton.addEventListener('click', () => {
 
 // Ajustar posición si se cambia el tamaño de la ventana
 window.addEventListener('resize', updateSlidePosition);
+
+// Para que se mueva solo
+setInterval(() => {
+    const nextButton = document.querySelector('.btn-next');
+    if (nextButton) nextButton.click();
+}, 4000);

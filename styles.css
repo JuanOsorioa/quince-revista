@@ -1092,3 +1092,32 @@ img {
   animation: vibration-calm 4s ease-in-out infinite;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
 }
+
+/* Ajuste para flores en versión escritorio */
+@media (min-width: 768px) {
+  #flor-int1, 
+  #flor-int2, 
+  #flor-int3, 
+  #gancho {
+    /* Limitamos el ancho máximo para que no crezcan desproporcionadamente */
+    width: 250px !important; 
+    height: auto !important;
+    
+    /* Evitamos que el posicionamiento absoluto las saque demasiado de la pantalla */
+    max-width: 20vw !important;
+  }
+
+  /* Ajustes específicos de posición si es necesario */
+  #flor-int1 {
+    right: 0 !important;
+  }
+  
+  #flor-int2, #flor-int3 {
+  position: absolute;   /* Sale del flujo normal */
+  top: 100px;           /* Ubicación vertical */
+  right: -50px;         /* Se sale 50px por la derecha del contenedor */
+  z-index: 10;          /* Pasa por encima de todo */
+  pointer-events: none; /* No estorba los clics del usuario */
+  transform: rotate(15deg); /* Le da el ángulo estético */
+  }
+}

@@ -23,7 +23,7 @@
 
     /*================================Reproductor===============================*/
     .player {
-    max-width: 600px;
+    max-width: 300px;
     padding: 30px;
     gap: 24px;
     overflow: hidden;
@@ -57,11 +57,139 @@
   .volume {
     width: 120px;
   }
+
+  /* Carrusel 2 para tablet */
+  .c2-track-container {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 450px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: transparent !important;
+  }
+
+  .c2-track {
+    width: 100% !important;
+    height: 100% !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .c2-slide {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: list-item;
+    overflow-y: hidden;
+  }
+
+  .c2-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+  }
+
+  .c2-nav-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 40px !important;
+    padding: 30px 0 !important;
+    width: 100% !important;
+    background: transparent !important;
+    border-bottom: gray 5px solid !important;
+  }
+
+  .c2-button {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #4A4A4A !important;
+    font-size: 35px !important;
+    font-weight: 100 !important;
+    line-height: 1 !important;
+    padding: 10px 20px !important;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .c2-button:hover {
+    color: #37d4d4 !important;
+    opacity: 0.7 !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .c2-container {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .carrusel-container {
+    max-width: 450px;
+  }
+
+  .agenda-container {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .dress-code {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .dress-code #flor-int1,
+  .dress-code #flor-int2,
+  .dress-code #flor-int3 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .dress-code #flor-int1 {
+    left: -30px;
+    top: 10px;
+    width: 130px;
+    transform: rotate(-10deg);
+  }
+
+  .dress-code #flor-int2 {
+    right: -30px;
+    top: 120px;
+    width: 120px;
+    transform: rotate(8deg);
+  }
+
+  .dress-code #flor-int3 {
+    left: -35px;
+    bottom: 20px;
+    width: 110px;
+    transform: rotate(-5deg);
+  }
+
+  .contenedor-recuerdos .imagen-base {
+    width: 80%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 @media (min-width: 1200px) {
   .player {
-    max-width: 700px;
+    max-width: 600px;
     padding: 35px;
     gap: 28px;
     overflow: hidden;
@@ -108,66 +236,132 @@
         width: 100dvw;
         display: flex;
         justify-content: center;
+        background-color: #4bb9d4;
     }
 
     #xv-texto {
         width: 50%;
         text-align: center;
+        background-color: white;
+        border-radius: 20px;
     }
 
-    #sello {
-        width: 50%;
-    }
-
-    /*============================carrouselA==============================*/
-    /*
-    .carrusel-container {
-        position: relative;
-        width: 100%;
-    }
-
-    .carrusel-track-container {
-        overflow: hidden;
-        width: 100%;
-    }
-
-    .carrusel-track {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        transition: transform 0.3s ease;
-    }
-
-    .carrusel-slide {
-        flex: 0 0 100%;
-        min-width: 0;
-    }
-
-    .carrusel-image {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-    }
-
-    .carrusel-nav-buttons {
+    .seccion-azul {
+        width: 100dvw;
         display: flex;
         justify-content: center;
-        margin-top: 10px;
     }
 
-    .carrusel-button {
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-        margin: 0 10px;
-        color: #000;
+    #pasarela {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .carrusel-button:hover {
-        color: #555;
+    /* Carrusel 2 para desktop */
+    .c2-track-container {
+      width: 100% !important;
+      max-width: 400px !important;
+      height: 600px !important;
+      margin: 0 auto !important;
+      position: relative !important;
+      overflow: hidden !important;
+      background: transparent !important;
     }
-    */
-    /*============================Fin carrouselA==============================*/
+
+    .c2-track {
+      width: 100% !important;
+      height: 100% !important;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .c2-slide {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      display: list-item;
+      overflow-y: hidden;
+    }
+
+    .c2-image {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      border-radius: 0 !important;
+    }
+
+    .c2-nav-buttons {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 40px !important;
+      padding: 30px 0 !important;
+      width: 100% !important;
+      background: transparent !important;
+      border-bottom: gray 5px solid !important;
+    }
+
+    .c2-button {
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      color: #4A4A4A !important;
+      font-size: 35px !important;
+      font-weight: 100 !important;
+      line-height: 1 !important;
+      padding: 10px 20px !important;
+      transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+      position: relative !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .c2-button:hover {
+      color: #37d4d4 !important;
+      opacity: 0.7 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .c2-container {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .carrusel-container {
+      max-width: 500px;
+    }
+
+    .agenda-container {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .dress-code {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    #countdown-container {
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+        background-color: lightgrey;
+    }
+
+    .seccion-azul {
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+        height: 250px;
+    }
 }

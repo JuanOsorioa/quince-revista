@@ -1,0 +1,173 @@
+@media (min-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #portada {
+        height: 100dvh;
+        object-fit: contain;
+    }
+
+    /*================================Reproductor===============================*/
+    .player {
+    max-width: 600px;
+    padding: 30px;
+    gap: 24px;
+    overflow: hidden;
+  }
+
+  .progress-wrap {
+    height: 8px;
+  }
+
+  .progress-bar::after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .player-controls {
+    gap: 24px;
+  }
+
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .play-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .volume {
+    width: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .player {
+    max-width: 700px;
+    padding: 35px;
+    gap: 28px;
+    overflow: hidden;
+  }
+
+  .progress-wrap {
+    height: 10px;
+  }
+
+  .progress-bar::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  .player-controls {
+    gap: 28px;
+  }
+
+  .nav-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .play-btn {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+  }
+
+  .volume {
+    width: 140px;
+  }
+    /*==============================Fin Reproductor==============================*/
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contenedor-xvtexto {
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+    }
+
+    #xv-texto {
+        width: 50%;
+        text-align: center;
+    }
+
+    #sello {
+        width: 50%;
+    }
+
+    /*============================carrouselA==============================*/
+    /*
+    .carrusel-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .carrusel-track-container {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carrusel-track {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .carrusel-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+    }
+
+    .carrusel-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .carrusel-nav-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .carrusel-button {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        margin: 0 10px;
+        color: #000;
+    }
+
+    .carrusel-button:hover {
+        color: #555;
+    }
+    */
+    /*============================Fin carrouselA==============================*/
+}

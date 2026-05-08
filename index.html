@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="imagenes/favicon.png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-desktop.css">
+    <link rel="stylesheet" href="styles/movil.css">
+    <link rel="stylesheet" href="styles/tablet-desktop.css">
     <title>¡Mis Quince! - Maria Jose</title>
   </head>
   <body>
@@ -13,30 +13,38 @@
       <img src="imagenes/portada.png" alt="Portada de revista" id="portada">
     </header>
     <main>
+       <!-- Reproductor -->
       <div class="player">
-        <audio id="audio" src="audio.mp3"></audio>
+        <audio id="audio" src="audio/audio.mp3"></audio>
+        <!-- Barra -->
         <div class="progress-wrap" id="progressWrap">
           <div class="progress-bar" id="progressBar"></div>
         </div>
+        <!-- Controles -->
         <div class="player-controls">
-          <button class="nav-btn like-btn" id="likeBtn" aria-label="Like">♡</button>
-          <button class="nav-btn" id="prevBtn" aria-label="Canción previa">&#9664;&#9664;</button>
-          <button class="play-btn" id="playBtn" aria-label="Reproducir / Pausar">&#9654;</button>
-          <button class="nav-btn" id="nextBtn" aria-label="Canción siguiente">&#9654;&#9654;</button>
-          <button class="nav-btn shuffle-btn" id="shuffleBtn" aria-label="Shuffle">⤯</button>
+          <button class="nav-btn like-btn" id="likeBtn" aria-label="Like">
+            ♡
+          </button>
+          <button class="nav-btn" id="prevBtn" aria-label="Canción previa">
+            &#9664;&#9664;
+          </button>
+          <button class="play-btn" id="playBtn" aria-label="Reproducir / Pausar">
+            &#9654;
+          </button>
+          <button class="nav-btn" id="nextBtn" aria-label="Canción siguiente">
+            &#9654;&#9654;
+          </button>
+          <button class="nav-btn shuffle-btn" id="shuffleBtn" aria-label="Shuffle">
+            ⤯
+          </button>
+        </div>
+        <!-- Volumen -->
+        <div class="volume-wrap">
+          <span class="vol-icon">🔊</span>
+          <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
         </div>
       </div>
-      <script>
-        const likeBtn = document.getElementById('likeBtn');
-        const shuffleBtn = document.getElementById('shuffleBtn');
-        likeBtn?.addEventListener('click', () => {
-          likeBtn.classList.toggle('liked');
-        });
-        shuffleBtn?.addEventListener('click', () => {
-          shuffleBtn.classList.toggle('active');
-        });
-      </script>
-      
+      <!-- Fin Reproductor -->
       <div class="contenedor-xvtexto">
         <img src="imagenes/xvmjtexto.png" alt="texto" id="xv-texto">
       </div>
@@ -183,10 +191,10 @@
       <img src="imagenes/te-esperamos.png" alt="¡TE ESPERAMOS!" id="te-esperamos">
       <img src="imagenes/flor-abajo.png" alt="flor" class="flor flor-abajo"">
     </footer>
-    <script src="fadeInfadeOut.js"></script>
-    <script src="player.js"></script>
-    <script src="contador.js"></script>
-    <script src="carruselA.js"></script>
-    <script src="carruselB.js"></script>
+    <script src="scripts/fadeInfadeOut.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/contador.js"></script>
+    <script src="scripts/carruselA.js"></script>
+    <script src="scripts/carruselB.js"></script>
   </body>
 </html>

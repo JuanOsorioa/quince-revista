@@ -1,7 +1,7 @@
 /* importación de fuentes */
 @font-face {
   font-family: relationship;
-  src: url(fuentes/Relationship\ of\ mélodrame.ttf);
+  src: url("../fuentes/Relationship\ of\ mélodrame.ttf");
 }
 /* fin de importación de fuentes */
 
@@ -43,111 +43,234 @@ main {
 }
 
 /*reproductor*/
-/* REPRODUCTOR DE AUDIO */
+.player {
+  width: 90%;
+  max-width: 540px;
+  margin: 3rem auto;
+  margin-top: 7px;
+  margin-bottom: 13px;
+  padding: 22px;
+
+  background: linear-gradient(145deg, #6ed8e6, #3666cc);
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.35),
+    0 0 20px rgba(89,180,255,0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+
+.progress-wrap {
+  width: 100%;
+  height: 6px;
+
+  background: rgba(255,255,255,0.18);
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  position: relative;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 30%;
+  height: 100%;
+
+  background: linear-gradient(to right, #56ccff, #8fe7ff);
+
+  border-radius: 20px;
+  position: relative;
+
+  transition: width 0.2s linear;
+}
+
+/* Punto deslizable */
+
+.progress-bar::after {
+  content: '';
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translate(50%, -50%);
+
+  width: 14px;
+  height: 14px;
+
+  background: white;
+  border: 3px solid #7edfff;
+
+  border-radius: 50%;
+
+  box-shadow: 0 0 14px rgba(126,223,255,0.8);
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.progress-wrap:hover .progress-bar::after {
+  opacity: 1;
+}
+
+/* ===== CONTROLES ===== */
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  overflow: hidden;
+}
+
+/* ===== BOTONES SIGUIENTE / ANTERIOR ===== */
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(41, 96, 100, 0.466);
+  color: #ecf1f3;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.15),
+    inset 0 1px 3px rgba(255,255,255,0.35);
+
+  backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+  background: #56ccff;
+  color: white;
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 16px rgba(86,204,255,0.7);
+}
+
+/* ===== BOTÓN PLAY ===== */
+
+.play-btn {
+  width: 68px;
+  height: 68px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(145deg, #3dbdff, #1f8fff);
+
+  color: white;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 0 25px rgba(16, 17, 17, 0.7),
+    0 6px 20px rgba(0,0,0,0.25);
+
+  transition: all 0.25s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.12);
+
+  background: linear-gradient(145deg, #59ccff, #299cff);
+
+  box-shadow:
+    0 0 32px rgba(89,204,255,0.9);
+}
+
+/* ===== TIEMPO ===== */
+
+.time {
+  color: #d7f4ff;
+
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ===== VOLUMEN ===== */
+
+.volume-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vol-icon {
+  color: #dff7ff;
+  font-size: 15px;
+}
+
+.volume {
+  width: 85px;
+  cursor: pointer;
+  accent-color: #72dfff;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
   .player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 18px;
-    max-width: 520px;
-    margin: 3rem auto 1.5rem;
-  }
-
-  .progress-wrap {
-    width: 100%;
-    height: 5px;
-    background: #444;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #336fb4;
-    border-radius: 4px;
-    transition: width 0.2s linear;
-    position: relative;
-  }
-
-  .progress-bar::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #336fb4;
-    border: 2px solid #56d9fa;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(108, 187, 109, 0.25);
+    padding: 18px;
+    border-radius: 20px;
+    overflow: hidden;
   }
 
   .player-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 12px;
-    width: 100%;
   }
 
   .play-btn {
-    background: #5ab2c9;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s;
-  }
-
-  .play-btn:hover,
-  .nav-btn:hover {
-    background: #ddd;
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
   }
 
   .nav-btn {
     width: 40px;
     height: 40px;
-    border: none;
-    background-color: white;
-    font-size: 18px;
-    transition: background 0.2s;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
+    font-size: 16px;
   }
-
-  .time {
-    font-size: 11px;
-    color: #aaa;
-    white-space: nowrap;
-    font-family: sans-serif;
-  }
-
-  .volume-wrap {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .vol-icon { font-size: 14px; }
 
   .volume {
-    width: 60px;
-    accent-color: #fff;
-    cursor: pointer;
+    width: 65px;
   }
+}
 /*fin reproductor*/
 
 .contenedor-xvtexto {
@@ -360,7 +483,7 @@ main {
 .detalles {
   margin: 0 auto;
   margin-top: 30px;
-  font-size: 30pt;
+  font-size: 20pt;
   margin-bottom: -30px !important;
 }
 
@@ -448,13 +571,17 @@ main {
 /* Contenedor externo: posición relativa para flores absolutas */
 .agenda-container {
   position: relative;
-  max-width: 420px;
+  max-width: 100dvw !important;
   margin: 0 auto;
   padding: 60px 0 40px; /* espacio para flores que sobresalen */
-  background-image: url(imagenes/fondo-cristal.png);
+  background-image: url("../imagenes/fondo-cristal.png") !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Flores decorativas a los lados del vidrio */
@@ -481,12 +608,16 @@ main {
 .agenda-inner {
   position: relative;
   z-index: 5;
-  background-image: url(imagenes/vidrio.png);
+  background-image: url("../imagenes/vidrio.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 50px 35px 45px;
   text-align: center;
   border: 1px solid rgba(255,255,255,0.3);
+  width: calc(100% - 20px);
+  margin-left: 30px;
+  margin-right: 30px;
+  box-sizing: border-box;
 }
 
 /* --- SÁBADO encima de la fecha --- */
@@ -581,7 +712,7 @@ main {
 }
 
 .corona {
-  margin-top: -100px !important;
+  margin-top: -90px !important;
   width: 200px;
   height: auto;
 }
@@ -589,7 +720,7 @@ main {
 
 .recepcion {
   width: 270px;
-  margin-top: -300px !important;
+  margin-top: -200px !important;
 }
 
 .siete {
@@ -603,7 +734,7 @@ main {
 
 /* --- BOTÓN CÓMO LLEGAR --- */
 .como-llegar-seccion {
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .btn-como-llegar img {
@@ -619,7 +750,7 @@ main {
 /* Móviles */
 @media (max-width: 480px) {
   .agenda-container {
-    max-width: 90%;
+    max-width: 100dvw;
     padding: 50px 0 30px;
   }
   .agenda-flor { width: 220px; }
@@ -681,7 +812,7 @@ main {
     width: 80%;            /* No ocupa todo el ancho para verse más premium */
     max-width: 1000px;     /* Límite de expansión */
     height: 500px;         /* Más bajo y ancho que en móvil */
-    margin: 100px auto;    /* Espaciado exterior para que respire el diseño */
+    margin: 100px auto 0;    /* Espaciado exterior para que respire el diseño, sin margen inferior */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -732,7 +863,7 @@ main {
 
   /* 3. UBICACIÓN: Modifica estos valores para moverla */
   /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
-  top: 4270px;        /* Distancia desde el borde superior */
+  top: 4070px;        /* Distancia desde el borde superior */
   right: -130px;      /* Valor negativo para que sobresalga por la derecha */
 
   /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
@@ -758,8 +889,8 @@ main {
 
   /* 3. UBICACIÓN: Modifica estos valores para moverla */
   /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
-  top: 4150px;        /* Distancia desde el borde superior */
-  right: -230px;      /* Valor negativo para que sobresalga por la derecha */
+  top: 250px;        /* Distancia desde el borde superior */
+  right: 280px;      /* Valor negativo para que sobresalga por la derecha */
 
   /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
   transform: rotate(-50deg); 
@@ -784,8 +915,8 @@ main {
 
   /* 3. UBICACIÓN: Modifica estos valores para moverla */
   /* Usa valores negativos para que se "salga" de su contenedor hacia los lados */
-  top: 4955px;        /* Distancia desde el borde superior */
-  right: -100px;      /* Valor negativo para que sobresalga por la derecha */
+  top: 410px;        /* Distancia desde el borde superior */
+  right: -120px;      /* Valor negativo para que quede 5px a la izquierda del botón confirmar */
 
   /* 4. ROTACIÓN: Modifica el número de 'deg' para girarla */
   transform: rotate(-20deg); 
@@ -860,7 +991,7 @@ main {
 }
 
 #user {
-  width: 70px;
+  width: 45px;
   margin: 0  auto;
   margin-top: 40px;
 }
@@ -868,11 +999,11 @@ main {
 .texto {
   font-family: GBD;
   margin-top: 40px;
-  font-size: 20pt;
+  font-size: 15pt;
 }
 
 #confirmar {
-  width: 250px;
+  width: 150px;
   margin: 0 auto;
   margin-top: 40px;
 }

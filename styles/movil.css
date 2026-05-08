@@ -366,14 +366,14 @@ main {
 
 @font-face {
             font-family: 'Abhaya';
-            src: url('fuentes/abhaya-libre-semi-bold.ttf') format('opentype');
+            src: url("../fuentes/abhaya-libre-semi-bold.ttf") format('opentype');
             font-weight: normal;
             font-style: normal;
         }
 
 @font-face {
             font-family: 'GBD';
-            src: url('fuentes/GFSDidot-Regular.ttf') format('opentype');
+            src: url("../fuentes/GFSDidot-Regular.ttf") format('opentype');
             font-weight: normal;
             font-style: normal;
         }
@@ -383,7 +383,7 @@ main {
   margin: 0  auto;
   font-size: 2em;
   color: white;
-  font-family: pacifi;
+  font-family: 'GBD';
   font-style: italic;
 }
 

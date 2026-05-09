@@ -76,3 +76,14 @@ progressWrap.addEventListener('click', e => {
   const pct = (e.clientX - rect.left) / rect.width;
   audio.currentTime = pct * audio.duration;
 });
+
+
+const likeBtn = document.getElementById('likeBtn');
+        const shuffleBtn = document.getElementById('shuffleBtn');
+        likeBtn?.addEventListener('click', () => {
+          likeBtn.classList.toggle('liked');
+        });
+        shuffleBtn?.addEventListener('click', () => {
+          shuffleBtn.classList.toggle('active');
+        });
+    

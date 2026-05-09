@@ -44,233 +44,110 @@ main {
 
 /*reproductor*/
 .player {
-  width: 90%;
-  max-width: 540px;
-  margin: 3rem auto;
-  margin-top: 7px;
-  margin-bottom: 13px;
-  padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    max-width: 520px;
+    margin: 3rem auto 1.5rem;
+    margin-top: 10px;
+  }
 
-  background: linear-gradient(145deg, #6ed8e6, #3666cc);
-  border-radius: 24px;
+  .progress-wrap {
+    width: 100%;
+    height: 5px;
+    background: #444;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
 
-  box-shadow:
-    0 10px 35px rgba(0,0,0,0.35),
-    0 0 20px rgba(89,180,255,0.25);
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #336fb4;
+    border-radius: 4px;
+    transition: width 0.2s linear;
+    position: relative;
+  }
 
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-}
-
-/* ===== BARRA DE PROGRESO ===== */
-
-.progress-wrap {
-  width: 100%;
-  height: 6px;
-
-  background: rgba(255,255,255,0.18);
-
-  border-radius: 20px;
-  overflow: hidden;
-
-  position: relative;
-  cursor: pointer;
-}
-
-.progress-bar {
-  width: 30%;
-  height: 100%;
-
-  background: linear-gradient(to right, #56ccff, #8fe7ff);
-
-  border-radius: 20px;
-  position: relative;
-
-  transition: width 0.2s linear;
-}
-
-/* Punto deslizable */
-
-.progress-bar::after {
-  content: '';
-
-  position: absolute;
-  right: 0;
-  top: 50%;
-
-  transform: translate(50%, -50%);
-
-  width: 14px;
-  height: 14px;
-
-  background: white;
-  border: 3px solid #7edfff;
-
-  border-radius: 50%;
-
-  box-shadow: 0 0 14px rgba(126,223,255,0.8);
-
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.progress-wrap:hover .progress-bar::after {
-  opacity: 1;
-}
-
-/* ===== CONTROLES ===== */
-
-.player-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  overflow: hidden;
-}
-
-/* ===== BOTONES SIGUIENTE / ANTERIOR ===== */
-
-.nav-btn {
-  width: 44px;
-  height: 44px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: rgba(41, 96, 100, 0.466);
-  color: #ecf1f3;
-
-  font-size: 18px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow:
-    0 4px 12px rgba(0,0,0,0.15),
-    inset 0 1px 3px rgba(255,255,255,0.35);
-
-  backdrop-filter: blur(6px);
-
-  transition: all 0.25s ease;
-}
-
-.nav-btn:hover {
-  background: #56ccff;
-  color: white;
-
-  transform: scale(1.08);
-
-  box-shadow:
-    0 0 16px rgba(86,204,255,0.7);
-}
-
-/* ===== BOTÓN PLAY ===== */
-
-.play-btn {
-  width: 68px;
-  height: 68px;
-
-  border: none;
-  border-radius: 50%;
-
-  background: linear-gradient(145deg, #3dbdff, #1f8fff);
-
-  color: white;
-
-  font-size: 28px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  box-shadow:
-    0 0 25px rgba(16, 17, 17, 0.7),
-    0 6px 20px rgba(0,0,0,0.25);
-
-  transition: all 0.25s ease;
-}
-
-.play-btn:hover {
-  transform: scale(1.12);
-
-  background: linear-gradient(145deg, #59ccff, #299cff);
-
-  box-shadow:
-    0 0 32px rgba(89,204,255,0.9);
-}
-
-/* ===== TIEMPO ===== */
-
-.time {
-  color: #d7f4ff;
-
-  font-size: 12px;
-  letter-spacing: 1px;
-
-  min-width: 40px;
-  text-align: center;
-}
-
-/* ===== VOLUMEN ===== */
-
-.volume-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.vol-icon {
-  color: #dff7ff;
-  font-size: 15px;
-}
-
-.volume {
-  width: 85px;
-  cursor: pointer;
-  accent-color: #72dfff;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 600px) {
-
-  .player {
-    padding: 18px;
-    border-radius: 20px;
-    overflow: hidden;
+  .progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #336fb4;
+    border: 2px solid #56d9fa;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(108, 187, 109, 0.25);
   }
 
   .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
+    width: 100%;
   }
 
   .play-btn {
-    width: 58px;
-    height: 58px;
-    font-size: 24px;
+    background: #5ab2c9;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .play-btn:hover,
+  .nav-btn:hover {
+    background: #ddd;
   }
 
   .nav-btn {
     width: 40px;
     height: 40px;
-    font-size: 16px;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    transition: background 0.2s;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
   }
 
-  .volume {
-    width: 65px;
+  .time {
+    font-size: 11px;
+    color: #aaa;
+    white-space: nowrap;
+    font-family: sans-serif;
   }
-}
+
+  .volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .vol-icon { font-size: 14px; }
+
+  .volume {
+    width: 60px;
+    accent-color: #fff;
+    cursor: pointer;
+  }
 /*fin reproductor*/
 
 .contenedor-xvtexto {

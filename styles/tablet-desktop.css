@@ -179,6 +179,13 @@
     transform: rotate(-5deg);
   }
 
+  #regalo {
+    width: 50%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
   .contenedor-recuerdos .imagen-base {
     width: 80%;
     max-width: 420px;
